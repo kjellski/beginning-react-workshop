@@ -26,8 +26,8 @@
 }
 
 .navbar-footer {
-  flex: 1 100%;
   display: flex;
+  flex: 1 100%;
   flex-direction: column;
   justify-content: flex-end;
 }
