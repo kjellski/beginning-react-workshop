@@ -6,7 +6,7 @@ import { App } from './App';
 import './index.css';
 
 
-// TASK: Understand Components and how to pass attributes
+// TASK: Understand Components, how to pass attributes and compose them.
 
 ReactDOM.render(
   <React.StrictMode>
