@@ -1,27 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import "./App.css";
-
-// TASK: Separate into components
-
-const Navbar: FunctionComponent = ({ children }): JSX.Element => (
-  <div className="navbar">{children}</div>
-);
-
-const NavbarHeader: FunctionComponent = ({ children }): JSX.Element => (
-  <div className="navbar-header">{children}</div>
-);
-
-const NavbarItem: FunctionComponent = ({ children }): JSX.Element => (
-  <div className="navbar-item">{children}</div>
-);
-
-const NavbarFooter: FunctionComponent = ({ children }): JSX.Element => (
-  <div className="navbar-footer">{children}</div>
-);
-
-const MainContent: FunctionComponent = ({ children }): JSX.Element => (
-  <div className="content">{children}</div>
-);
+import { MainContent } from "./components/MainContent";
+import { Navbar } from "./components/Navbar";
+import { NavbarFooter } from "./components/NavbarFooter";
+import { NavbarHeader } from "./components/NavbarHeader";
+import { NavbarItem } from "./components/NavbarItem";
 
 export const App = () => (
   <div className="app">
