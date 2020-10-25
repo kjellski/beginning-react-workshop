@@ -36,9 +36,38 @@
   background-color: cadetblue;
   padding: 8px;
   flex: 1 1;
+  overflow-y: scroll;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.attendee-list {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.attendee-list-entry {
+  display: flex;
+  flex-direction: column;
+  min-width: 256px;
+  background-color: cornflowerblue;
+  border: solid;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+.attendee-list-entry-name {
+  font-weight: bold;
+}
+
+.attendee-list-entry-info {
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
 }

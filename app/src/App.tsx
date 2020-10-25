@@ -1,6 +1,6 @@
 import "./App.css";
 
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 
 import { MainContent } from "./components/MainContent";
 import { Navbar } from "./components/Navbar";
@@ -8,15 +8,15 @@ import { NavbarFooter } from "./components/NavbarFooter";
 import { NavbarHeader } from "./components/NavbarHeader";
 import { NavbarItem } from "./components/NavbarItem";
 
-let renderCounter = 0
+// TASK 1: This counter doesn't work... :/ why?
+//         Introducing the useState hook
 const Counter: FC = () => {
-  const [count, setCount] = useState(0);
+  let count = 0;
 
   const handleOnClick = () => {
-    setCount(count + 1);
+    count = count + 1
+      ;
   };
-  renderCounter++
-  console.log(renderCounter);
 
   return (
     <div>
@@ -26,10 +26,6 @@ const Counter: FC = () => {
     </div>
   );
 };
-
-// TASK: Write a Stopwatch component that shows the current time,
-// a button to click and how long you took to press that button since
-// the last time.
 
 export const App = () => (
   <div className="app">
@@ -43,7 +39,9 @@ export const App = () => (
       <NavbarFooter>Profile</NavbarFooter>
     </Navbar>
     <MainContent>
+      {/* This is how a JSX comment looks like :) */}
       <Counter />
+      {/* TASK 2: Add a component AttendeeList with an argument `attendees` here */}
     </MainContent>
   </div>
 );
