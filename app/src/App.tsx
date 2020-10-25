@@ -1,44 +1,66 @@
+import Axios from "axios";
 import React, { FC, useEffect, useState } from "react";
-import "./App.css";
-import { MainContent } from "./components/MainContent";
-import { Navbar } from "./components/Navbar";
-import { NavbarFooter } from "./components/NavbarFooter";
-import { NavbarHeader } from "./components/NavbarHeader";
-import { NavbarItem } from "./components/NavbarItem";
+import { Endpoints } from "@octokit/types";
+import { List, ListItem, ListItemText } from "@material-ui/core";
 
-const Clock: FC = () => {
-  const [time, setTime] = useState(new Date());
+import Layout from "./components/Layout";
+
+// TASK 1: Fetch some data from the github API and show it!
+// Look here for further guidance: https://docs.github.com/en/free-pro-team@latest/rest/reference/users
+
+// What's this? 
+type UserProfile = Endpoints["GET /users/:username"]["response"]["data"];
+
+const UserProfile: FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<UserProfile | null>(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
+    const fetchUser = async () => {
+      try {
+        setIsLoading(true);
+        const response = await Axios.get<UserProfile>(
+          "https://api.github.com/users/kjellski"
+        ).then(res => res.data);
 
-    return () => clearInterval(intervalId);
+        setIsLoading(false);
+        setData(response as UserProfile);
+        
+      } catch (error) {
+        setData(null);
+        setIsLoading(false);
+        setError(error);
+      }
+    };
+
+    fetchUser();
   }, []);
 
-  return (
-    <h1>
-      {time.toLocaleDateString()} - {time.toLocaleTimeString()}
-    </h1>
-  );
+  if (isLoading || !data) {
+    return <span>"Loading..."</span>;
+  }
+
+  if (error) {
+    return <span>{"An error has occurred: " + (error.message as string)}</span>;
+  }
+
+  console.log(data);
+  return <span>{JSON.stringify(data.login)}</span>;
 };
 
-// TASK: Fetch some data from the github API and show it!
+// TASK 2: Let's construct our own UserProfile hook
 
-export const App = () => (
-  <div className="app">
-    <Navbar>
-      <NavbarHeader>Navbar</NavbarHeader>
-
-      <NavbarItem>A</NavbarItem>
-      <NavbarItem>B</NavbarItem>
-      <NavbarItem>C</NavbarItem>
-
-      <NavbarFooter>Profile</NavbarFooter>
-    </Navbar>
-    <MainContent>
-      <Clock />
-    </MainContent>
-  </div>
+export const App: FC = () => (
+  <Layout
+    Navigation={
+      <List>
+        <ListItem>
+          <ListItemText>None yet...</ListItemText>
+        </ListItem>
+      </List>
+    }
+  >
+    <UserProfile />
+  </Layout>
 );
