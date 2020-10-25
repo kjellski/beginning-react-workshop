@@ -1,5 +1,7 @@
-import React, { FC, useState } from "react";
 import "./App.css";
+
+import React, { FC, useState } from "react";
+
 import { MainContent } from "./components/MainContent";
 import { Navbar } from "./components/Navbar";
 import { NavbarFooter } from "./components/NavbarFooter";
@@ -26,8 +28,9 @@ const Stopwatch: FC = () => {
   );
 };
 
-// TASK: Write a clock that updates its time every second. You can use
-// the browser method setInterval(callback, intervalInMs) for this!
+// TASK: Replace the Stopwatch with a clock that updates its time every second. 
+// You can use the browser method `setInterval` for this!
+// const intervalId = setInterval(() => console.log("Hello, jump!")), 1000)
 
 export const App = () => (
   <div className="app">
