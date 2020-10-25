@@ -63,11 +63,18 @@ code {
 }
 
 .attendee-list-entry-name {
+  display: flex;
+  justify-content: space-between;
   font-weight: bold;
 }
 
 .attendee-list-entry-info {
   font-size: small;
+  display: flex;
+  justify-content: space-between;
+}
+
+.winner {
   display: flex;
   justify-content: space-between;
 }

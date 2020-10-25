@@ -14,8 +14,7 @@ const Counter: FC = () => {
   let count = 0;
 
   const handleOnClick = () => {
-    count = count + 1
-      ;
+    count = count + 1;
   };
 
   return (
@@ -41,7 +40,18 @@ export const App = () => (
     <MainContent>
       {/* This is how a JSX comment looks like :) */}
       <Counter />
-      {/* TASK 2: Add a component AttendeeList with an argument `attendees` here */}
+      {/*
+        TASK 2: 
+          - Add a `<AttendeeList />` component with two arguments here.
+            It should take the list as `attendees` and an attendee `onClick` handler
+            in order to show the winner on top here.
+          - Add a `<Winner />` component with one argument `attendee` here, it should 
+            only show if somebody won
+          - Feel free to use the classes from `App.css`
+          - Bonus points for adding an `onClick` handler to winner in order to reset it.  
+      */}
+      {/* <Winner attendee={attendee} /> */}
+      {/* <AttendeeList attendees={attendees} onClick={handleAttendeeClick} /> */}
     </MainContent>
   </div>
 );
