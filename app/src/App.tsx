@@ -1,17 +1,22 @@
-import React, { FC, useState } from "react";
 import "./App.css";
+
+import React, { FC, useState } from "react";
+
 import { MainContent } from "./components/MainContent";
 import { Navbar } from "./components/Navbar";
 import { NavbarFooter } from "./components/NavbarFooter";
 import { NavbarHeader } from "./components/NavbarHeader";
 import { NavbarItem } from "./components/NavbarItem";
 
+let renderCounter = 0
 const Counter: FC = () => {
   const [count, setCount] = useState(0);
 
   const handleOnClick = () => {
     setCount(count + 1);
   };
+  renderCounter++
+  console.log(renderCounter);
 
   return (
     <div>

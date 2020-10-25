@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import './index.css';
+
 // import components with the 
 import { App } from './App';
 // import CSS just as if it was a normal file
-import './index.css';
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 // TASK: Understand Components, how to pass attributes and compose them.
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
 
