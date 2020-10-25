@@ -1,7 +1,9 @@
-import React from 'react';
 import './App.css';
 
-// TASK: Separate into components
+import React from 'react';
+
+// TASK: Understand Components, how to pass attributes and compose them.
+//       Separate into components
 
 export const App = () => (
   <div className="app">
@@ -27,3 +29,9 @@ export const App = () => (
     <div className="content">Content</div>
   </div>
 );
+
+// QUESTIONS:
+//   - What are `children`?
+//   - What are valid children?
+// LINKS:
+//   - Components: https://reactjs.org/docs/components-and-props.html

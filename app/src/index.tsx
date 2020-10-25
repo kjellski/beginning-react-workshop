@@ -1,23 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import components with the 
-import { App } from './App';
-// import CSS just as if it was a normal file
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
 
+// TASK: Understand Elements and JSX
+//       Write your own one!
 
-// TASK: Understand Components, how to pass attributes and compose them.
+const Caption = () => <h1>Hello World!</h1>;
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<Caption />, document.getElementById("root"));
 
 // QUESTIONS:
-//   - What is a Component?
+//   - How does react integrate into your website?
+//   - What is an Element?
 //   - How to pass attributes / compose them?
 // LINKS:
-//   - Components: https://reactjs.org/docs/components-and-props.html
-
+//   - Rendering: https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects
+//   - Updating Elements: https://reactjs.org/docs/rendering-elements.html#updating-the-rendered-element
