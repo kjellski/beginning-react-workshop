@@ -1,10 +1,16 @@
+import "./index.css";
+
 import React from "react";
 import ReactDOM from "react-dom";
 
-// TASK: Understand Elements and JSX
+// TASK: Understand Elements and TSX
 //       Write your own one!
 
 const Caption = () => <h1>Hello World!</h1>;
+
+// const Paragraph = ...;
+// // Yelled greeting
+// const Greeting = ..;
 
 ReactDOM.render(<Caption />, document.getElementById("root"));
 

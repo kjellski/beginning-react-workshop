@@ -1,30 +1,26 @@
-import './App.css';
+import "./App.css";
 
-import React from 'react';
+import React from "react";
 
 // TASK: Understand Components, how to pass attributes and compose them.
 //       Separate into components
 
+// const Navbar = ...
+// const NavbarHeader = ...
+// const NavbarItem = ...
+// const NavbarFooter = ...
+// const Content = ...
+
 export const App = () => (
   <div className="app">
     <div className="navbar">
-      <div className="navbar-header">
-        Navbar
-      </div>
+      <div className="navbar-header">Navbar</div>
 
-      <div className="navbar-item">
-        A
-      </div>
-      <div className="navbar-item">
-        B
-      </div>
-      <div className="navbar-item">
-        C
-      </div>
-      
-      <div className="navbar-footer">
-        Profile
-      </div>
+      <div className="navbar-item">A</div>
+      <div className="navbar-item">B</div>
+      <div className="navbar-item">C</div>
+
+      <div className="navbar-footer">Profile</div>
     </div>
     <div className="content">Content</div>
   </div>
